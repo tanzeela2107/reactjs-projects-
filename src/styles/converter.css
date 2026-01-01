@@ -1,0 +1,259 @@
+/* ============================= */
+/* RESET */
+/* ============================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================= */
+/* 🌈 ANIMATED BACKGROUND */
+/* ============================= */
+
+/* LIGHT MODE */
+.app-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #667eea, #764ba2, #43cea2, #185a9d);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* DARK MODE */
+.app-wrapper.dark-bg {
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000000);
+  background-size: 400% 400%;
+  animation: gradientBG 14s ease infinite;
+}
+
+/* Shared animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ============================= */
+/* 🧱 WRAPPER (TOGGLE + CARD) */
+/* ============================= */
+.converter-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ============================= */
+/* 🌗 THEME TOGGLE */
+/* ============================= */
+.theme-toggle {
+  align-self: flex-end; /* move slightly right */
+  margin-bottom: 16px; /* space from heading */
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.75);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.app-wrapper.dark-bg .theme-toggle {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+/* ============================= */
+/* 🧊 GLASSMORPHISM CARD */
+/* ============================= */
+.converter-container {
+  width: 380px;
+  padding: 26px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  color: #222;
+}
+
+/* Dark card */
+.app-wrapper.dark-bg .converter-container {
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+}
+
+/* ============================= */
+/* 🔤 TITLE */
+/* ============================= */
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+/* ============================= */
+/* 💰 INPUT */
+/* ============================= */
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+}
+
+/* ============================= */
+/* 🌍 DROPDOWNS */
+/* ============================= */
+.dropdown-group {
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.flag-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flag-select img {
+  width: 32px;
+  border-radius: 4px;
+}
+
+select {
+  width: 100%;
+  padding: 9px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+}
+
+/* ============================= */
+/* 🔁 SWAP ICON */
+/* ============================= */
+.swap-icon {
+  cursor: pointer;
+  margin: 12px 0;
+  font-size: 20px;
+  transition: transform 0.4s ease;
+}
+
+.swap-icon:hover {
+  transform: rotate(180deg);
+}
+
+/* ============================= */
+/* 🔘 CONVERT BUTTON */
+/* ============================= */
+.convert-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.convert-btn:hover {
+  transform: scale(1.03);
+}
+
+/* ============================= */
+/* 📊 RATE + RESULT */
+/* ============================= */
+.rate-text {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.result-box {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.result-box span {
+  color: #1d4ed8;
+}
+
+.app-wrapper.dark-bg .result-box {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* ============================= */
+/* 📜 HISTORY */
+/* ============================= */
+.history-box {
+  margin-top: 18px;
+  text-align: left;
+}
+
+.history-box h4 {
+  margin-bottom: 6px;
+}
+
+.history-box ul {
+  list-style: none;
+}
+
+.history-box li {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* ============================= */
+/* ⚠️ STATUS */
+/* ============================= */
+.loading {
+  margin-top: 10px;
+}
+
+.error {
+  margin-top: 10px;
+  color: #ff4d4f;
+}
