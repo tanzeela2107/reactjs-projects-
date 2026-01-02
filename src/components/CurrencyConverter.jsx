@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaMoneyBillWave, FaExchangeAlt } from "react-icons/fa";
 import { MdCurrencyExchange } from "react-icons/md";
 import CurrencyDropdown from "./CurrencyDropdown";
+import currencyToCountry from "../utils/currencyToCountry";
 import { convertCurrency } from "../services/currencyService";
 import "../styles/converter.css";
 
