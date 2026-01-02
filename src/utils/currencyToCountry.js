@@ -6,4 +6,5 @@ const currencyToCountry = {
   JPY: "jp",
 };
 
+export { currencyToCountry };
 export default currencyToCountry;
