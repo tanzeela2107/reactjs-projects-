@@ -1,5 +1,3 @@
-import currencyToCountry from "../utils/currencyToCountry";
-
 function CurrencyDropdown({ currency, currencies, onChange }) {
   return (
     <select value={currency} onChange={onChange}>
